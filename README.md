@@ -230,7 +230,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ## 4. Consideraciones generales
 
-* Este proyecto se debe resolver en duplas.
+* Este proyecto se debe resolver en individual.
 * El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
   interfaz será desplegada usando [GitHub Pages](https://pages.github.com/).
 * Tiempo para completarlo: Toma como referencia 4 semanas.
