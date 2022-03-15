@@ -1,3 +1,9 @@
-import App from './components/App.js';
+//traer las funciones
+import {cardsMemory, doubleCards} from './components/App.js';
 
-document.getElementById('root').appendChild(App());
+
+
+//mostrar las tarjetas en la interfaz
+document.getElementById('root').appendChild(cardsMemory(doubleCards));
+
+
