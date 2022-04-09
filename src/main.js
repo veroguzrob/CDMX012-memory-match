@@ -6,6 +6,6 @@ const showFrontCards = document.getElementById('front');
     showFrontCards.appendChild(frontCardsMemory());*/
 
 //mostrar el back de las tarjetas en la interfaz
-const showBackCards = document.getElementById('card');
+const showBackCards = document.getElementById('back');
     showBackCards.appendChild(backCardsMemory(doubleCards));
     

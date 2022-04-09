@@ -47,15 +47,19 @@ header {
     height: 0.1px;
 }
 
-.containCard div {
+.containCard {
+    
+}
+
+.containCard p {
+    font-size: 1px;
+    color: transparent;
+}
+
+.containCard div{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-}
-
-.containCard div p {
-    font-size: 1px;
-    color: transparent;
 }
 
 .containCard figure {
@@ -96,6 +100,10 @@ footer {
 
 a {
     color: #E2C851;
+}
+
+.show_hidden {
+    display: none;
 }
 
 @media screen and (min-width: 481px) and (max-width: 766px) {
@@ -144,7 +152,7 @@ a {
         padding: 10px;
     }
 
-    .containCard div p {
+    .containCard p {
         font-size: 40px;
         color: #fff;
         margin: 0 0 15px 0;
@@ -234,7 +242,7 @@ a {
         padding: 20px;
     }
 
-    .containCard div p {
+    .containCard p {
         font-size: 60px;
         color: #fff;
         margin: 0 0 15px 0;
@@ -323,7 +331,7 @@ a {
         padding: 20px;
     }
 
-    .containCard div p {
+    .containCard p {
         font-size: 80px;
         color: #fff;
         margin: 0 0 20px 0;
