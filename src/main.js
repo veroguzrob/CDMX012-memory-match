@@ -1,11 +1,8 @@
 //traer las funciones
-import { /*frontCardsMemory,*/ backCardsMemory, doubleCards } from './components/App.js';
+import { cardsMemory, doubleCards } from './components/App.js';
 
-/*//mostrar el front de las tarjetas en la interfaz
-const showFrontCards = document.getElementById('front');
-    showFrontCards.appendChild(frontCardsMemory());*/
+//mostrar las tarjetas en la interfaz
+const showCards = document.getElementById('cards');
+    showCards.appendChild(cardsMemory(doubleCards));
 
-//mostrar el back de las tarjetas en la interfaz
-const showBackCards = document.getElementById('back');
-    showBackCards.appendChild(backCardsMemory(doubleCards));
-    
+
