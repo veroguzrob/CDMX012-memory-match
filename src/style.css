@@ -5,7 +5,6 @@ body {
     margin: 0;
     font-family: 'Franklin Gothic';
 }
-
 header {
     padding: 10px;
     font-size: 35px;
@@ -15,7 +14,6 @@ header {
     text-shadow: 0 5px 5px #00000080;
     letter-spacing: 3px;
 }
-
 .menu {
     font-size: 12px;
     color: #fff;
@@ -23,7 +21,6 @@ header {
     align-items: center;
     justify-content: space-around;
 }
-
 .menu button {
     background-color: #002027;
     width: 78px;
@@ -32,7 +29,6 @@ header {
     box-shadow: 0 2px 2px #00000080;
     color: #fff;
 }
-
 .menu p {
     background-color: #002027;
     width: 70px;
@@ -41,27 +37,19 @@ header {
     box-shadow: 0 2px 2px #00000080;
     text-align: center;
 }
-
 .menu img {
     width: 0.1px;
     height: 0.1px;
 }
-
-.containCard {
-    
-}
-
 .containCard p {
     font-size: 1px;
     color: transparent;
 }
-
 .containCard div{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-
 .containCard figure {
     background: #E2C851;
     width: 60px;
@@ -72,38 +60,35 @@ header {
     box-shadow: 0px 3px #00000080;
     position: relative;
 }
-
 .containCard img {
     position: absolute;
     width: 60px;
     height: 80px;
 }
-
 .decor {
     text-align: center;
 }
-
 .decor img {
     margin-top: 20px;
     width: 100px;
     height: 100px;
 }
-
 footer {
     margin-top: 20px;
     background: #002027;
-    padding: 5px;
+    padding: 10px;
     text-align: center;
     font-size: 10px;
     color: #ffffff;
 }
-
 a {
     color: #E2C851;
 }
-
-.show_hidden {
-    display: none;
+.show{
+    visibility: visible;
+}
+.hidden {
+    visibility: hidden;
 }
 
 @media screen and (min-width: 481px) and (max-width: 766px) {
@@ -156,6 +141,7 @@ a {
         font-size: 40px;
         color: #fff;
         margin: 0 0 15px 0;
+        text-align: center;
     }
 
     .containCard figure {
@@ -180,19 +166,9 @@ a {
     }
 
     footer {
-        background: #002027;
-        padding: 10px;
-        text-align: center;
-        font-size: 15px;
-        color: #ffffff;
-    }
-
-    a {
-        color: #E2C851;
+        font-size: 13px;
     }
 }
-
-
 @media screen and (min-width: 767px) and (max-width: 949px) {
     header {
         display: none;
@@ -246,6 +222,7 @@ a {
         font-size: 60px;
         color: #fff;
         margin: 0 0 15px 0;
+        text-align: center;
     }
 
     .containCard figure {
@@ -270,18 +247,9 @@ a {
     }
 
     footer {
-        background: #002027;
-        padding: 10px;
-        text-align: center;
         font-size: 15px;
-        color: #ffffff;
-    }
-
-    a {
-        color: #E2C851;
     }
 }
-
 @media screen and (min-width: 950px) {
     header {
         display: none;
@@ -335,6 +303,7 @@ a {
         font-size: 80px;
         color: #fff;
         margin: 0 0 20px 0;
+        text-align: center;
     }
 
     .containCard figure {
@@ -359,14 +328,9 @@ a {
     }
 
     footer {
-        background: #002027;
         padding: 10px;
-        text-align: center;
         font-size: 18px;
-        color: #ffffff;
     }
 
-    a {
-        color: #E2C851;
-    }
 }
+

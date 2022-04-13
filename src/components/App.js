@@ -5,12 +5,13 @@ import cards from '../data/pokemon/pokemon.js'
 const allData = Object.values(cards.items);
 
 /*//crear las tarjetas 1a version
-export const backCardsMemory = (pokemons) => {
+export const cardsMemory = (pokemons) => {
   const pokemonCards = document.createElement('div');
   pokemons.forEach(pokemon => {
     const pokeCard = document.createElement('figure');
     const pokeImg = document.createElement('img');
     pokeImg.src = pokemon.image
+    pokeCard.className = 'hidden';
     const pokebolaCard = document.createElement('figure');
     const pokebolaImg = document.createElement('img');
     pokebolaImg.src = "img/card1.png"
@@ -22,44 +23,26 @@ export const backCardsMemory = (pokemons) => {
   return pokemonCards;
 };*/
 //crear las tarjetas 2a version
-export const backCardsMemory = (pokemons) => {
+export const cardsMemory = (pokemons) => {
   const pokemonCards = document.createElement('div');
-  pokemons.forEach(pokemon => {
+  pokemons.forEach((pokemon, index) => {
     const pokeCard = document.createElement('figure');
+    pokeCard.setAttribute('id', pokemon.id+index);//como pa que fue?
+    pokeCard.addEventListener('click', prueba)
     const pokeImg = document.createElement('img');
-      pokeImg.src = pokemon.image
-      pokeImg.classList.add('show_hidden')
+    pokeImg.src = pokemon.image;
+    pokeImg.setAttribute('data-pokeImg', index )
+    pokeImg.classList.add('hidden');
     const pokebolaImg = document.createElement('img');
-    pokebolaImg.src = "img/card1.png"
-    pokemonCards.appendChild(pokeCard)
-    pokeCard.appendChild(pokeImg)
-    pokeCard.appendChild(pokebolaImg)
+    pokebolaImg.src = "img/card1.png";
+    pokebolaImg.setAttribute('data-pokebola', index);
+    pokebolaImg.classList.add('show');
+    pokemonCards.appendChild(pokeCard);
+    pokeCard.appendChild(pokeImg);
+    pokeCard.appendChild(pokebolaImg);
   });
   return pokemonCards;
 };
-/*//Crear las tarjetas 3a version
-export const frontCardsMemory = () => {
-  const pokebolaCards = document.createElement('div');
-  const pokebolaCard = document.createElement('figure');
-  const pokebolaImg = document.createElement('img');
-    pokebolaImg.src = "img/card1.png";
-  pokebolaCards.appendChild(pokebolaCard);
-  pokebolaCard.appendChild(pokebolaImg);
-return pokebolaCards;
-}
-export const backCardsMemory = (pokemons) => {
-  const pokemonCards = document.createElement('div');
-  pokemons.forEach(pokemon => {
-    const pokeCard = document.createElement('figure');
-    const pokeImg = document.createElement('img');
-    pokeImg.src = pokemon.image
-    pokeImg.get
-    pokemonCards.appendChild(pokeCard)
-    pokeCard.appendChild(pokeImg)
-  });
-  return pokemonCards;
-}*/
-
 
 //duplicar data
 const allCards1 = allData
@@ -69,5 +52,14 @@ export const doubleCards = allCards1.concat(allCards2)
 //obtener el random de las tarjetas
 doubleCards.sort(() => { return Math.random() - 0.5 }); /*Math.random() nos devuelve un número aleatorio entre 0 y 1, al restar 0.5 hacemos que genere números negativos y positivos para que la función sort() nos re-ordene el arreglo de forma aleatoria colocando un elemento delante otro detrás.*/
 
-//debo crear funcion donde tenga el interrutor (.toggle), si tiene una clase se la quiita y si no la tiene se la pone
+//función para intercambiar clases
+function prueba(e) {
+  let pokebolaIndex = e.target.getAttribute("data-pokebola"); // 0
+  console.log(pokebolaIndex);
+  let pokemonAmostrar = document.querySelector(`img[data-pokeImg]`)
 
+  e.target.classList.toggle('hidden');
+  pokemonAmostrar.classList.toggle('hidden')
+  //e.target.nextSibling.classList.toggle('show')
+  
+}
