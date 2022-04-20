@@ -1,65 +1,87 @@
 //traer la data para juego
 import cards from '../data/pokemon/pokemon.js'
 
-//obtener la data en un arreglo
+//obtener la data
 const allData = Object.values(cards.items);
 
-/*//crear las tarjetas 1a version
-export const cardsMemory = (pokemons) => {
-  const pokemonCards = document.createElement('div');
-  pokemons.forEach(pokemon => {
-    const pokeCard = document.createElement('figure');
-    const pokeImg = document.createElement('img');
-    pokeImg.src = pokemon.image
-    pokeCard.className = 'hidden';
-    const pokebolaCard = document.createElement('figure');
-    const pokebolaImg = document.createElement('img');
-    pokebolaImg.src = "img/card1.png"
-    pokemonCards.appendChild(pokeCard)
-    pokemonCards.appendChild(pokebolaCard)
-    pokeCard.appendChild(pokeImg)
-    pokebolaCard.appendChild(pokebolaImg)
-  });
-  return pokemonCards;
-};*/
 //crear las tarjetas 2a version
 export const cardsMemory = (pokemons) => {
   const pokemonCards = document.createElement('div');
   pokemons.forEach((pokemon, index) => {
     const pokeCard = document.createElement('figure');
-    pokeCard.setAttribute('id', pokemon.id+index);//como pa que fue?
-    pokeCard.addEventListener('click', prueba)
-    const pokeImg = document.createElement('img');
-    pokeImg.src = pokemon.image;
-    pokeImg.setAttribute('data-pokeImg', index )
-    pokeImg.classList.add('hidden');
+    const pokemonImg = document.createElement('img');
+    pokemonImg.src = pokemon.image;
+    pokemonImg.id = 'pokemon' + index;
+    pokemonImg.classList.toggle('hidden');
     const pokebolaImg = document.createElement('img');
     pokebolaImg.src = "img/card1.png";
-    pokebolaImg.setAttribute('data-pokebola', index);
-    pokebolaImg.classList.add('show');
+    pokebolaImg.id = 'bola' + index;
+    pokebolaImg.addEventListener('click', () => {
+      pokemonImg.classList.toggle('hidden');
+      pokebolaImg.classList.toggle('hidden');
+      pokemonsMatch.push(pokemon.id);
+      pokeId.push('pokemon' + index);
+      bolaId.push('bola' + index);
+      comparacionId(pokemonsMatch, pokeId, bolaId);
+    })
     pokemonCards.appendChild(pokeCard);
-    pokeCard.appendChild(pokeImg);
+    pokeCard.appendChild(pokemonImg);
     pokeCard.appendChild(pokebolaImg);
   });
   return pokemonCards;
 };
 
-//duplicar data
+//duplicar la data
 const allCards1 = allData
 const allCards2 = allData
 export const doubleCards = allCards1.concat(allCards2)
 
 //obtener el random de las tarjetas
-doubleCards.sort(() => { return Math.random() - 0.5 }); /*Math.random() nos devuelve un número aleatorio entre 0 y 1, al restar 0.5 hacemos que genere números negativos y positivos para que la función sort() nos re-ordene el arreglo de forma aleatoria colocando un elemento delante otro detrás.*/
+doubleCards.sort(() => { return Math.random() - 0.5 });
+console.table(doubleCards)
 
-//función para intercambiar clases
-function prueba(e) {
-  let pokebolaIndex = e.target.getAttribute("data-pokebola"); // 0
-  console.log(pokebolaIndex);
-  let pokemonAmostrar = document.querySelector(`img[data-pokeImg]`)
+//hacer match
+let pokemonsMatch = []
+let pokeId = []
+let bolaId = []
+const comparacionId = (pokemons, ids, pokeBolas) => {
+  //console.log(pokemons, ids, pokeBolas);
 
-  e.target.classList.toggle('hidden');
-  pokemonAmostrar.classList.toggle('hidden')
-  //e.target.nextSibling.classList.toggle('show')
-  
+  if (pokemons.length == 2) {
+    const firstCard = document.getElementById(ids[0]);
+    console.log(firstCard);
+    const secondCard = document.getElementById(ids[1]);
+    console.log(secondCard);
+    const bola1 = document.getElementById(pokeBolas[0])
+    console.log(bola1);
+    const bola2 = document.getElementById(pokeBolas[1])
+    console.log(bola2);
+
+    if (pokemons[0] == pokemons[1]) {
+      console.log('los pokemones son iguales');
+      //aqui va el contador de aciertos
+
+    } else {
+      firstCard.classList.toggle('hidden');
+      secondCard.classList.toggle('hidden');
+      bola1.classList.toggle('hidden');
+      bola2.classList.toggle('hidden');
+      //debo agregar un set Time Out
+      console.log('los pokemones NO son iguales');
+
+    }
+    pokemonsMatch = []
+    pokeId = []
+    bolaId = []
+    //qui va el contador de movimientos
+  }
 }
+
+
+
+
+
+
+
+
+
