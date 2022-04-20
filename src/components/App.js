@@ -40,48 +40,69 @@ export const doubleCards = allCards1.concat(allCards2)
 doubleCards.sort(() => { return Math.random() - 0.5 });
 console.table(doubleCards)
 
-//hacer match
+//variables para la funcion
 let pokemonsMatch = []
 let pokeId = []
 let bolaId = []
+let movements = 0;
+let hits = 0;
+let timer = false;
+let time = 60;
+let countdownTime = null;
+
+//manejo de las estadisticas
+const showMovements = document.getElementById('movimientos');
+const showHits = document.getElementById('aciertos');
+const timeRest = document.getElementById('tiempo');
+
+//funcion que nos permita hacer match
 const comparacionId = (pokemons, ids, pokeBolas) => {
-  //console.log(pokemons, ids, pokeBolas);
+  //aqui ponemos el temporizador
+  if (timer == false) {
+    countTime();
+    timer = true;
+  }
 
   if (pokemons.length == 2) {
     const firstCard = document.getElementById(ids[0]);
-    console.log(firstCard);
     const secondCard = document.getElementById(ids[1]);
-    console.log(secondCard);
-    const bola1 = document.getElementById(pokeBolas[0])
-    console.log(bola1);
-    const bola2 = document.getElementById(pokeBolas[1])
-    console.log(bola2);
+    const ball1 = document.getElementById(pokeBolas[0])
+    const ball2 = document.getElementById(pokeBolas[1])
 
     if (pokemons[0] == pokemons[1]) {
       console.log('los pokemones son iguales');
       //aqui va el contador de aciertos
+      hits++;
+      showHits.innerHTML = `Aciertos: <br>${hits}`;
+
 
     } else {
-      firstCard.classList.toggle('hidden');
-      secondCard.classList.toggle('hidden');
-      bola1.classList.toggle('hidden');
-      bola2.classList.toggle('hidden');
-      //debo agregar un set Time Out
+      setTimeout(() => {
+        firstCard.classList.toggle('hidden');
+        secondCard.classList.toggle('hidden');
+        ball1.classList.toggle('hidden');
+        ball2.classList.toggle('hidden');
+      }, 800);
       console.log('los pokemones NO son iguales');
 
     }
     pokemonsMatch = []
     pokeId = []
     bolaId = []
-    //qui va el contador de movimientos
+
+    //aqui va el contador de movimientos
+    movements++;
+    showMovements.innerHTML = `Movimientos: <br>${movements}`;
   }
 }
 
-
-
-
-
-
-
-
-
+//funcion para el temporizador
+function countTime () {
+  countdownTime = setInterval(() => {
+    time--;
+    timeRest.innerHTML = `Tiempo: <br>${time} segundos`;
+    if (timer == 0) {
+      clearInterval(countdownTime);
+    }
+  }, 1000)
+}
