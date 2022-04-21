@@ -1,0 +1,349 @@
+/*diseño mobile (max-width: 480px)*/
+body {
+    background: linear-gradient(180deg, #00768F 30.21%, #FFFFFF 100%);
+    background-repeat: no-repeat;
+    margin: 0;
+    font-family: 'Franklin Gothic';
+}
+
+header {
+    padding: 10px;
+    font-size: 35px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 5px 5px #00000080;
+    letter-spacing: 3px;
+}
+
+.menu {
+    font-size: 12px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menu button {
+    background-color: #002027;
+    width: 78px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px #00000080;
+    color: #fff;
+}
+
+.menu p {
+    background-color: #002027;
+    width: 70px;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px #00000080;
+    text-align: center;
+}
+
+.menu img {
+    width: 0.1px;
+    height: 0.1px;
+}
+
+.containCard p {
+    font-size: 1px;
+    color: transparent;
+}
+
+.containCard div {
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.containCard figure {
+    background: #E2C851;
+    width: 60px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 3px #00000080;
+}
+
+.containCard img {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.decor {
+    text-align: center;
+}
+
+.decor img {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+footer {
+    margin-top: 20px;
+    background: #002027;
+    padding: 10px;
+    text-align: center;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+a {
+    color: #E2C851;
+}
+
+@media screen and (min-width: 481px) and (max-width: 766px) {
+    header {
+        display: none;
+    }
+
+    .menu {
+        position: absolute;
+        margin-top: 100px;
+        width: 120px;
+        height: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    .menu button {
+        width: 80px;
+        padding: 8px;
+        font-size: 15px;
+        margin-top: 80px;
+        margin-bottom: 50px;
+        border-radius: 8px;
+        box-shadow: 0px 5px #00000080;
+    }
+
+    .menu p {
+        width: 60px;
+        padding: 7px;
+        font-size: 15px;
+    }
+
+    .menu img {
+        margin-top: 80px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .containCard {
+        margin-left: 120px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        background: #002027;
+        padding: 10px;
+    }
+
+    .containCard p {
+        font-size: 40px;
+        color: #fff;
+        margin: 0 0 15px 0;
+        text-align: center;
+    }
+
+    .containCard figure {
+        background: #E2C851;
+        width: 70px;
+        height: 100px;
+        margin: 15px;
+        border-radius: 20px;
+        padding: 10px;
+        box-shadow: 0px 3px #00000080;
+        position: relative;
+    }
+
+    .containCard img {
+        position: absolute;
+        width: 70px;
+        height: 100px;
+    }
+
+    .decor {
+        display: none;
+    }
+
+    footer {
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 949px) {
+    header {
+        display: none;
+    }
+
+    .menu {
+        position: absolute;
+        margin-top: 100px;
+        width: 150px;
+        height: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    .menu button {
+        width: 100px;
+        padding: 10px;
+        font-size: 20px;
+        margin-top: 150px;
+        margin-bottom: 50px;
+        border-radius: 8px;
+        box-shadow: 0px 5px #00000080;
+    }
+
+    .menu p {
+        width: 80px;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 8px;
+        box-shadow: 0px 5px #00000080;
+        margin-bottom: 50px;
+    }
+
+    .menu img {
+        margin-top: 80px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .containCard {
+        margin-left: 150px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        background: #002027;
+        padding: 20px;
+    }
+
+    .containCard p {
+        font-size: 60px;
+        color: #fff;
+        margin: 0 0 15px 0;
+        text-align: center;
+    }
+
+    .containCard figure {
+        background: #E2C851;
+        width: 90px;
+        height: 120px;
+        border-radius: 20px;
+        margin: 15px;
+        padding: 10px;
+        box-shadow: 0px 3px #00000080;
+        position: relative;
+    }
+
+    .containCard img {
+        position: absolute;
+        width: 90px;
+        height: 120px;
+    }
+
+    .decor {
+        display: none;
+    }
+
+    footer {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    header {
+        display: none;
+    }
+
+    .menu {
+        position: absolute;
+        margin-top: 50px;
+        width: 200px;
+        height: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    .menu button {
+        width: 125px;
+        padding: 10px;
+        font-size: 25px;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        border-radius: 8px;
+        box-shadow: 0px 5px #00000080;
+    }
+
+    .menu p {
+        width: 100px;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 5px #00000080;
+        margin-bottom: 50px;
+    }
+
+    .menu img {
+
+        width: 180px;
+        height: 180px;
+    }
+
+    .containCard {
+        margin-left: 200px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        background: #002027;
+        padding: 20px;
+    }
+
+    .containCard p {
+        font-size: 80px;
+        color: #fff;
+        margin: 0 0 20px 0;
+        text-align: center;
+    }
+
+    .containCard figure {
+        background: #E2C851;
+        width: 120px;
+        height: 150px;
+        border-radius: 20px;
+        margin: 20px;
+        padding: 10px;
+        box-shadow: 0px 3px #00000080;
+        position: relative;
+    }
+
+    .containCard img {
+        position: absolute;
+        width: 120px;
+        height: 150px;
+    }
+
+    .decor {
+        display: none;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+}
