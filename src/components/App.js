@@ -38,7 +38,6 @@ export const doubleCards = allCards1.concat(allCards2)
 
 //obtener el random de las tarjetas
 doubleCards.sort(() => { return Math.random() - 0.5 });
-console.table(doubleCards)
 
 //variables para la funcion
 let pokemonsMatch = []
@@ -70,11 +69,17 @@ const comparacionId = (pokemons, ids, pokeBolas) => {
     const ball2 = document.getElementById(pokeBolas[1])
 
     if (pokemons[0] == pokemons[1]) {
-      console.log('los pokemones son iguales');
       //aqui va el contador de aciertos
       hits++;
       showHits.innerHTML = `Aciertos: <br>${hits}`;
 
+      
+      if (hits == 9) {
+        clearInterval(countdownTime);
+        showHits.innerHTML = `Aciertos: <br>${hits} "GANASTE"`;
+        timeRest.innerHTML = `Fantastico!! Solo te demoraste <br>${time - timer} segundos`;
+        showMovements.innerHTML = `Movimientos: ${movements} "Eres lo Maximo!!"`;
+      }
 
     } else {
       setTimeout(() => {
@@ -83,7 +88,6 @@ const comparacionId = (pokemons, ids, pokeBolas) => {
         ball1.classList.toggle('hidden');
         ball2.classList.toggle('hidden');
       }, 800);
-      console.log('los pokemones NO son iguales');
 
     }
     pokemonsMatch = []
@@ -97,7 +101,7 @@ const comparacionId = (pokemons, ids, pokeBolas) => {
 }
 
 //funcion para el temporizador
-function countTime () {
+function countTime() {
   countdownTime = setInterval(() => {
     time--;
     timeRest.innerHTML = `Tiempo: <br>${time} segundos`;
